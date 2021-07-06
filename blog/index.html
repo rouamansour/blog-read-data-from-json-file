@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <script type="text/javascript" src="file.json"></script>
+  <title>BLOG</title>
+  <script type="text/javascript" >
+    function load() {
+        var mydata = JSON.parse(data);
+        console.log(mydata.length);
+
+        var div = document.getElementById('data');
+        /*var img=prompt("donner le lien de l'image ")*/
+
+        for(var i = 0;i < mydata.length; i++)
+        {
+            div.innerHTML = div.innerHTML
+            +"<article>" 
+            +"<img src='D:/STAGE/JSON/pictures/photo.jpg'>"
+            + " " + mydata[i].image
+            +"<br>"+ "<a href='card1.html'>card</a>"
+            +"<br>"+mydata[i].paragraph
+            + "<br>"
+            +"</article>" 
+        }
+    }
+</script>
+</head>
+
+<body onload="load()">
+  <div class="container">
+    <header>
+      <div class="header">
+        <h1>blog</h1>
+        <div class="header-right">
+          <a href="#home" class="active" id="item1">Home</a>
+          <a href="#contact" id="item2">Contact</a>
+          <a href="#about" id="item3">About</a>
+        </div>
+      </div>
+    </header>
+  </div>
+    <main class="grid">
+      <div id="data">
+
+      </div>
+    </main>
+    <footer>
+      <div class="footer">
+        <p>copyright@webcoding Pro.All Rights Reserved</p>
+      </div>
+    </footer>
+</body>
+
+</html>
